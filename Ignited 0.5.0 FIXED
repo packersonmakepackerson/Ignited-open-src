@@ -1,0 +1,1554 @@
+if identifyexecutor and ({identifyexecutor()})[1] == 'Wave' then
+    lplr:Kick("hm, wave user moment.")
+else
+if game.PlaceId == 6872265039 then
+   getgenv().SecureMode = true
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Ignited | V 0.4.0",
+   LoadingTitle = "Loading",
+   LoadingSubtitle = "by Zero",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = false, 
+      FileName = "Ignited"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "discord.gg/jQe5DJWT",
+      RememberJoins = true
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "checkpoint",
+      Subtitle = "Key System",
+      Note = "In our discord: discord.gg/jQe5DJWT",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"3ACF1D1B5E817245DEB1964FB82C7"}
+   }
+})
+
+Rayfield:Notify({
+   Title = "Finished Loading!",
+   Content = "Press Q to open GUI if its not already open",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Ok!",
+         Callback = function()
+         print("Ok was pressed | Ignited.lol")
+      end
+   },
+},
+})
+
+local Tab = Window:CreateTab("Blatant", 4483362458)
+local Section = Tab:CreateSection("the homeless shall be taken care of.")
+
+local Button = BlatantTab:CreateButton({
+   Name = "Flight",
+   Callback = function()
+    repeat wait() 
+    until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+local mouse = game.Players.LocalPlayer:GetMouse() 
+repeat wait() until mouse
+local plr = game.Players.LocalPlayer 
+local torso = plr.Character.Head 
+local flying = false
+local deb = true 
+local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+local maxspeed = 23
+local speed = 23
+ 
+function Fly() 
+local bg = Instance.new("BodyGyro", torso) 
+bg.P = 9e4 
+bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+bg.cframe = torso.CFrame 
+local bv = Instance.new("BodyVelocity", torso) 
+bv.velocity = Vector3.new(0,0.1,0) 
+bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+repeat wait() 
+plr.Character.Humanoid.PlatformStand = true 
+if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+speed = speed+.5+(speed/maxspeed) 
+if speed > maxspeed then 
+speed = maxspeed 
+end 
+elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+speed = speed-1 
+if speed < 0 then 
+speed = 0 
+end 
+end 
+if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+else 
+bv.velocity = Vector3.new(0,0.1,0) 
+end 
+bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0) 
+until not flying 
+ctrl = {f = 0, b = 0, l = 0, r = 0} 
+lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+speed = 0 
+bg:Destroy() 
+bv:Destroy() 
+plr.Character.Humanoid.PlatformStand = false 
+end 
+mouse.KeyDown:connect(function(key) 
+if key:lower() == "f" then 
+if flying then flying = false 
+if flying = true then
+    Rayfield:Notify({
+   Title = "Module Toggled",
+   Content = "Flight Has Been Enabled",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+if flying = false then
+  Rayfield:Notify({
+   Title = "Module Toggled",
+   Content = "Flight Has Been Disabled",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+flying = true 
+Fly() 
+end 
+elseif key:lower() == "w" then 
+ctrl.f = 1 
+elseif key:lower() == "s" then 
+ctrl.b = -1 
+elseif key:lower() == "a" then 
+ctrl.l = -1 
+elseif key:lower() == "d" then 
+ctrl.r = 1 
+end 
+end) 
+mouse.KeyUp:connect(function(key) 
+if key:lower() == "w" then 
+ctrl.f = 0 
+elseif key:lower() == "s" then 
+ctrl.b = 0 
+elseif key:lower() == "a" then 
+ctrl.l = 0 
+elseif key:lower() == "d" then 
+ctrl.r = 0 
+end 
+end)
+Fly()
+  end,
+})
+
+local Tab = Window:CreateTab("Playet", 4483362458) -- Title, Image
+local section = Tab:CreateSection("idfk")
+
+local Toggle = PlayerTab:CreateToggle({
+   Name = "Staff Detector",
+   CurrentValue = false,
+   Flag = "Toggle10000000090", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   spawn(function()
+	 while wait() do
+		if variable then
+     for i,v in pairs(game.GetService("Players"):GetPlayers()) do
+      if Players.Name = "aleenaswrldd" then
+            lplr:Kick("Staff Detected: aleenaswrldd")
+      if Players.Name = "nwrkr" then
+            lplr:Kick("Staff Detected: nwrkr")
+      if Players.Name = "Typhoon_Kang" then
+            lplr:Kick("Staff Detected: Typhoon_Kang")
+      if Players.Name = "YoZevStar" then
+            lplr:Kick("Staff Detected: YoZevStar")
+      if Players.Name = "asapzyzz" then
+            lplr:Kick("Staff Detected: asapzyzz")
+      if Players.Name = "Muscular_Gorilla" then
+            lplr:Kick("Staff Detected: Muscular_Gorilla")
+
+local Slider = BlatantTab:CreateSlider({
+   Name = "Speed",
+   Range = {16, 23},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 16,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   if value then
+                lplr.Character.Humanoid.WalkSpeed = 23
+            else
+                lplr.Character.Humanoid.WalkSpeed = 16
+            end
+        end
+   end,
+})
+
+local Tab = Window:CreateTab("Visuals", 4483362458)
+local Section = Tab:CreateSection("made with love by zero <3")
+
+local VisualsButton = Tab:CreateButton({
+   Name = "Box Esp",
+   Callback = function()
+   local camera = workspace.CurrentCamera
+            local HeadOff = Vector3.new(0, 0.5, 0)
+            local LegOff = Vector3.new(0, 3, 0)
+
+            for _, player in pairs(game.Players:GetChildren()) do
+                local BoxOutline = Drawing.new("Square")
+                BoxOutline.Visible = false
+                BoxOutline.Color = Color3.new(228/255, 173/255, 200/255)
+                BoxOutline.Thickness = 3
+                BoxOutline.Transparency = 1
+                BoxOutline.Filled = false
+
+                local Box = Drawing.new("Square")
+                Box.Visible = false
+                Box.Color = Color3.new(1, 1, 1)
+                Box.Thickness = 1
+                Box.Transparency = 1
+                Box.Filled = false
+
+                local function box()
+                    game:GetService("RunService").RenderStepped:Connect(function()
+                        if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character:FindFirstChild("HumanoidRootPart") and player ~= lplr and player.Character.Humanoid.Health > 0 then
+                            local RootPart = player.Character.HumanoidRootPart
+                            local Head = player.Character.Head
+                            local RootPosition, onScreen = camera:WorldToViewportPoint(RootPart.Position)
+                            local HeadPosition = camera:WorldToViewportPoint(Head.Position + HeadOff)
+                            local LegPosition = camera:WorldToViewportPoint(RootPart.Position - LegOff)
+
+                            if onScreen then
+                                BoxOutline.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+                                BoxOutline.Position = Vector2.new(RootPosition.X - BoxOutline.Size.X / 2, RootPosition.Y - BoxOutline.Size.Y / 2)
+                                BoxOutline.Visible = true
+
+                                Box.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+                                Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
+                                Box.Visible = true
+                            else
+                                BoxOutline.Visible = false
+                                Box.Visible = false
+                            end
+                        end
+                    end)
+                end
+
+                box()
+            end
+   end,
+})
+
+local Button = VisualsTab:CreateButton({
+   Name = "WaterMark",
+   Callback = function()
+   if game.CoreGui:FindFirstChild("UI") then
+                game.CoreGui:FindFirstChild("UI"):Destroy()
+            end
+            local screengui = Instance.new("ScreenGui", game.CoreGui)
+            screengui.Name = "UI"
+
+            local frame = Instance.new("Frame", screengui)
+            frame.Name = "Ignited"
+            frame.Size = UDim2.new(0, 100, 0, 50)
+            frame.Position = UDim2.new(0, 0, 0, 0)
+            frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+   end,
+})
+
+local Button = VisualsTab:CreateButton({
+   Name = "FPS Boost",
+   Callback = function()
+   if nil then repeat until nil script:Destroy() end
+
+            while true do
+                wait()
+                if not script:IsDescendantOf(game.Players.LocalPlayer.Backpack) then
+                    break
+                end
+            end
+            local on = false
+            local done = true 
+
+            script.Parent.MouseButton1Click:connect(function()
+                on = not on
+                if not done then return end 
+                done = false 
+                if on then 
+                    for _, Parts in pairs(workspace:GetDescendants()) do 
+                        if Parts:IsA("Part") then 
+                            if not Parts:FindFirstChild("SurfaceType") then 
+                                local SurfaceType = Instance.new("StringValue", Parts)
+                                SurfaceType.Name = "SurfaceType"
+                                SurfaceType.Value = tostring(Parts.Material) 
+                            end
+                            Parts.Material  = Enum.Material.SmoothPlastic
+                        end
+                    end
+                else 
+                    for _, Parts in pairs(workspace:GetDescendants()) do 
+                        if Parts:IsA("Part") and Parts:FindFirstChild("SurfaceType") then 
+                            Parts.Material  = Enum.Material[Parts.SurfaceType.Value] 
+                        end
+                    end 
+                end
+                done = true 
+            end)
+   end,
+})
+
+local Button = BlatantTab:CreateButton({
+   Name = "Bed Nuker",
+   Callback = function()
+  function(t)local ag=RaycastParams.new()ag.IgnoreWater=true;function NukerFunction(ah)local ai=game:GetService("Workspace"):Raycast(ah.Position+Vector3.new(0,24,0),Vector3.new(0,-27,0),ag)if ai then local aj=ai.Instance;for p,q in pairs(aj:GetChildren())do if q:IsA("Texture")then q:Destroy()end end;aj.Color=Color3.fromRGB(102,0,255)aj.Material=Enum.Material.Neon;game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.DamageBlock:InvokeServer({["blockRef"]={["blockPosition"]=Vector3.new(math.round(aj.Position.X/3),math.round(aj.Position.Y/3),math.round(aj.Position.Z/3))},["hitPosition"]=Vector3.new(math.round(aj.Position.X/3),math.round(aj.Position.Y/3),math.round(aj.Position.Z/3)),["hitNormal"]=Vector3.new(math.round(aj.Position.X/3),math.round(aj.Position.Y/3),math.round(aj.Position.Z/3))})end end;local aa={["Value"]=30}local ak=t;if ak then spawn(function()while task.wait(0.1)do if not ak then return end;spawn(function()if h:GetAttribute("DenyBlockBreak")==true then h:SetAttribute("DenyBlockBreak",nil)end end)if isAlive(h)then local u=getbeds()for p,q in pairs(u)do local D=(q.Position-h.Character.PrimaryPart.Position).Magnitude;if D<aa["Value"]then NukerFunction(q)end end end end end)end end)
+  end,
+})
+
+local Button = VisualsTab:CreateButton({
+   Name = "Chams",
+   Callback = function()
+   local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+local ChamsAdjustments = {
+ Enabled = false,
+ OutlineColor = Color3.fromRGB(255, 255, 255),
+ OutlineTransparency = 0,
+ FillColor = Color3.fromRGB(120, 255, 0),
+ FillTransparency = 0,
+ 
+ Keybind = Enum.KeyCode.Z,
+}
+
+local function AddChams(v)
+ if v and v.Character and not v.Character:FindFirstChild(v.Name.."_Chams") then
+  local ChamsESP = Instance.new("Highlight")
+  
+  ChamsESP.Name = v.Name.."_Chams"
+  
+  ChamsESP.OutlineColor = ChamsAdjustments.OutlineColor
+  ChamsESP.OutlineTransparency = ChamsAdjustments.OutlineTransparency
+  ChamsESP.FillColor = ChamsAdjustments.FillColor
+  ChamsESP.FillTransparency = ChamsAdjustments.FillTransparency
+  
+  ChamsESP.Parent = v.Character
+  ChamsESP.Adornee = v.Character
+ end
+end
+
+local function UpdateChams(v)
+ if v and v.Character and v.Character:FindFirstChild(v.Name.."_Chams") then
+  local ChamsESP = v.Character:FindFirstChild(v.Name.."_Chams")
+  ChamsESP.Enabled = ChamsAdjustments.Enabled
+  ChamsESP.OutlineColor = ChamsAdjustments.OutlineColor
+  ChamsESP.OutlineTransparency = ChamsAdjustments.OutlineTransparency
+  ChamsESP.FillColor = ChamsAdjustments.FillColor
+  ChamsESP.FillTransparency = ChamsAdjustments.FillTransparency
+ end
+end
+
+local function RemoveChams(v)
+ if v and v.Character and v.Character:FindFirstChild(v.Name.."_Chams") then
+  v.Character:FindFirstChild(v.Name.."_Chams"):Destroy()
+ end
+end
+
+UserInputService.InputBegan:Connect(function(Key)
+ if Key.KeyCode == ChamsAdjustments.Keybind and UserInputService:GetFocusedTextBox() == nil then
+  ChamsAdjustments.Enabled = not ChamsAdjustments.Enabled
+ end
+end)
+
+RunService.Stepped:Connect(function()
+ if ChamsAdjustments.Enabled == true then
+  for _,v in pairs(Players:GetPlayers()) do
+   if v ~= LocalPlayer and v.Character then
+    if not v.Character:FindFirstChild(v.Name.."_Chams") then
+     AddChams(v)
+    elseif v.Character:FindFirstChild(v.Name.."_Chams") then
+     UpdateChams(v)
+    end
+   end
+  end
+ elseif ChamsAdjustments.Enabled == false then
+  for _,v in pairs(Players:GetPlayers()) do
+   if v ~= LocalPlayer and v.Character then
+    if v.Character:FindFirstChild(v.Name.."_Chams") then
+     RemoveChams(v)
+    end
+   end
+  end
+ end
+end,
+})
+
+local Button = BlatantTab:CreateButton({
+   Name = "Killaura",
+   Callback = function()
+  function(t)local Y=require(game:GetService("ReplicatedStorage").TS.games.bedwars["bedwars-swords"]).BedwarsSwords;function hashFunc(Z)return{value=Z}end;local function _(s)if not s then return{items={},armor={}}end;local a0,a1=pcall(function()return require(game:GetService("ReplicatedStorage").TS.inventory["inventory-util"]).InventoryUtil.getInventory(s)end)if not a0 then return{items={},armor={}}end;if s.Character and s.Character:FindFirstChild("InventoryFolder")then local a2=s.Character:FindFirstChild("InventoryFolder").Value;if not a2 then return a1 end;for p,q in next,a1 do for a3,a4 in next,q do if typeof(a4)=='table'and a4.itemType then a4.instance=a2:FindFirstChild(a4.itemType)end end;if typeof(q)=='table'and q.itemType then q.instance=a2:FindFirstChild(q.itemType)end end end;return a1 end;local function a5()local a6,a7=-9e9,nil;for p,q in next,_(h).items do local a8=table.find(Y,q.itemType)if not a8 then end;if a8>a6 then a7=q;a6=a8 end end;return a7 end;local a9=m:Get(r["SwordRemote"])local aa={["Value"]=21}local ab=t;if ab then spawn(function()repeat task.wait(0.12)local ac=getnearestplayer(aa["Value"])if ac~=nil and ac.Team~=h.Team and isAlive(ac)and ac.Character:FindFirstChild("Humanoid").Health>0.1 and isAlive(h)and h.Character:FindFirstChild("Humanoid").Health>0.1 and not ac.Character:FindFirstChild("ForceField")then local ad=a5()spawn(function()local ae=Instance.new("Animation")ae.AnimationId="rbxassetid://4947108314"local af=h.Character:FindFirstChild("Humanoid"):FindFirstChild("Animator")af:LoadAnimation(ae):Play()ae:Destroy()r["ViewmodelController"]:playAnimation(15)end)if ad~=nil then r["SwordController"].lastAttack=game:GetService("Workspace"):GetServerTimeNow()-0.11;a9:SendToServer({["weapon"]=ad.tool,["entityInstance"]=ac.Character,["validate"]={["raycast"]={["cameraPosition"]=hashFunc(j.CFrame.Position),["cursorDirection"]=hashFunc(Ray.new(j.CFrame.Position,ac.Character:FindFirstChild("HumanoidRootPart").Position).Unit.Direction)},["targetPosition"]=hashFunc(ac.Character:FindFirstChild("HumanoidRootPart").Position),["selfPosition"]=hashFunc(h.Character:FindFirstChild("HumanoidRootPart").Position+((h.Character:FindFirstChild("HumanoidRootPart").Position-ac.Character:FindFirstChild("HumanoidRootPart").Position).magnitude>14 and CFrame.lookAt(h.Character:FindFirstChild("HumanoidRootPart").Position,ac.Character:FindFirstChild("HumanoidRootPart").Position).LookVector*4 or Vector3.new(0,0,0)))},["chargedAttack"]={["chargeRatio"]=0.8}})end end until not ab end)end end)
+   end,
+})
+
+local Button = BlatantTab:CreateButton({
+   Name = "Chat Spammer",
+   Callback = function()
+   while task.wait() do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ignited gaming.lol",
+"All") end
+   end,
+})
+
+local Button = BlatantTab:CreateButton({
+   Name = "Scaffold (buggy)",
+   Callback = function()
+   wait until game:IsLoaded()
+     function scaffold()
+    while true do
+     lplr mouse:Click.cps = 5
+      game:GetService("ReplicatedStorage").rbxts_include.node_modules["@easy_games"]["block-engine"].node_modules["@rbxts"].net.out._NetManaged.PlaceBlock:InvokeServer()
+          block:FindFirstChild("Block")
+    if block value = 16 or > then
+             scaffold()
+    if block value ~= 16 then then
+             scaffold:Destroy()
+                 
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Full Bright",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   spawn(function()
+    while wait() do
+        if variable then
+        local Light = game:GetService("Lighting")
+
+function dofullbright()
+Light.Ambient = Color3.new(1, 1, 1)
+Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+Light.ColorShift_Top = Color3.new(1, 1, 1)
+end
+
+dofullbright()
+
+Light.LightingChanged:Connect(dofullbright)
+        end
+    end
+end)
+   end,
+})
+
+local Tab = Window:CreateTab("Player", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("faggots")
+
+local Toggle = PlayerTab:CreateToggle({
+   Name = "Force Reset",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   spawn(function()
+    while wait() do
+        if variable then
+        local player = game.Players.LocalPlayer
+           if lplr:IsNotA("HumanoidRootPart") then
+     Rayfield:Notify({
+   Title = "🚨Error🚨",
+   Content = "❌ LocalPlayer Not Found ❌",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+or if local player = game.Players.LocalPlayer
+if player.Charecter and 
+player.Charecter:FindFirstChild("Humanoid") then
+    local function forceResetAction()
+    local player = game.Players.LocalPlayer
+    if player.Character and player.Character:FindFirstChild("Humanoid") then
+        player.Character.Humanoid.Health = 0
+    end
+end
+ 
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, isProcessed)
+    if isProcessed then
+        return
+    end
+ 
+    if input.KeyCode == Enum.KeyCode.R then
+        forceResetAction()
+    end
+end)
+      end
+   },
+},
+})
+   end,
+})
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = PlayerTab:CreateToggle({
+   Name = "Uninstall Ignited",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   spawn(function()
+    while wait() do
+        if variable then
+        local lplr = game.GetService("Players").LocalPlayer
+local names = {'Ignited'}
+if isfolder(folder) then
+       delfile('ignited') and
+       Rayfield:Destroy() or
+       if not isfolder(folder) then
+       Rayfield:Notify({
+   Title = "🚨 Error 🚨",
+   Content = "❌ File Not Found ❌",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+}) 
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Atmosphere ",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   spawn(function()
+    while wait() do
+        if variable then
+        local screengui = Instance.new("ScreenGui", game.CoreGui)
+            screengui.Name = "UI"
+
+            local frame = Instance.new("Frame", screengui)
+            frame.Size = UDim2.new({1,0,1,0})
+            frame.Position = UDim2.new(0, 0, 0, 0)
+            frame.BackgroundColor3 = Color3.fromRGB(248, 0, 255)
+            frame.Transparency = 0.7
+   end,
+})
+   local screengui = Instance.new("ScreenGui", game.CoreGui)
+            screengui.Name = "UI"
+
+            local frame = Instance.new("Frame", screengui)
+            frame.Size = UDim2.new({1,0,1,0})
+            frame.Position = UDim2.new(0, 0, 0, 0)
+            frame.BackgroundColor3 = Color3.fromRGB(248, 0, 255)
+            frame.Transparency = 0.5
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Distance ESP",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    spawn(function()
+         while wait() do
+              if variable then
+        local c = workspace.CurrentCamera
+local ps = game:GetService("Players")
+local lp = ps.LocalPlayer
+local rs = game:GetService("RunService")
+
+local function esp(p,cr)
+    local h = cr:WaitForChild("Humanoid")
+    local hrp = cr:WaitForChild("HumanoidRootPart")
+
+    local text = Drawing.new("Text")
+    text.Visible = false
+    text.Center = true
+    text.Outline = true 
+    text.Font = 2
+    text.Color = Color3.fromRGB(255,255,255)
+    text.Size = 13
+
+    local c1
+    local c2
+    local c3
+
+    local function dc()
+        text.Visible = false
+        text:Remove()
+        if c1 then
+            c1:Disconnect()
+            c1 = nil 
+        end
+        if c2 then
+            c2:Disconnect()
+            c2 = nil 
+        end
+        if c3 then
+            c3:Disconnect()
+            c3 = nil 
+        end
+    end
+
+    c2 = cr.AncestryChanged:Connect(function(_,parent)
+        if not parent then
+            dc()
+        end
+    end)
+
+    c3 = h.HealthChanged:Connect(function(v)
+        if (v<=0) or (h:GetState() == Enum.HumanoidStateType.Dead) then
+            dc()
+        end
+    end)
+
+    c1 = rs.RenderStepped:Connect(function()
+        local hrp_pos,hrp_onscreen = c:WorldToViewportPoint(hrp.Position)
+        if hrp_onscreen then
+            text.Position = Vector2.new(hrp_pos.X, hrp_pos.Y)
+            text.Text = p.Name
+            text.Visible = true
+        else
+            text.Visible = false
+        end
+    end)
+end
+
+local function p_added(p)
+    if p.Character then
+        esp(p,p.Character)
+    end
+    p.CharacterAdded:Connect(function(cr)
+        esp(p,cr)
+    end)
+end
+
+for i,p in next, ps:GetPlayers() do 
+    if p ~= lp then
+        p_added(p)
+    end
+end
+
+ps.PlayerAdded:Connect(p_added)
+        end
+    end
+end)
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "Switch to Turtle",
+   Callback = function()
+   --skidded from vape+, because their skids and i gen dont give a shit abt skids
+      local args = {
+    [1] = {
+        ["globalTeamKey"] = "summer_2024_turtle",
+        ["player"] = game:GetService("Players").LocalPlayer,
+        ["globalTeamEventKey"] = "summer_2024"
+    }
+}
+
+game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.GlobalTeamsSetTeam:FireServer(unpack(args))
+print("Vape+ the ultimate skids with fake modules")
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Auto Toxic",
+   Callback = function()
+   wait until game:IsLoaded()
+    for i,v in pairs(game.GetService("Players"):GetPlayers()) do
+          local words = {
+              ['Hacker']
+              ['Cheater']
+              ['wizard']
+              ['get a life']
+              ['gay']
+              ['im getting mod']
+}
+
+    
+game:GetService('ReplicatedStorage'):FindFirstChild('DefaultChatSystemChatEvents')
+    if words = true then
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("i didnt recall ordering a yappuchino | novoline.lol",) end
+              
+   end,
+})
+
+local Toggle = PlayerTab:CreateToggle({
+   Name = "Uninject",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   spawn(function()
+    while wait() do
+        if variable then
+        local lplr = game.GetService("Players").LocalPlayer
+local names = {'Ignited'}
+if isfolder(folder) then
+       delfile('Ignited') and
+       Rayfield:Destroy() or
+       if not isfolder(folder) then
+       Rayfield:Notify({
+   Title = "🚨 Error 🚨",
+   Content = "❌ File Not Found ❌",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+}) 
+        end
+    end
+end)
+   end,
+})
+
+local Button = VisualsTab:CreateButton({
+   Name = "Tracers",
+   Callback = function()
+   local lplr = game.Players.LocalPlayer
+   local TargetPartName = "HumanoidRootPart"
+local GenericHumanoidTargetPartName = TargetPartName	
+local LineColor = Color3.new(255, 255, 255)
+local TeammateLineColor = Color3.new(0, 0.25, 1)
+local GenericHumanoidLineColor = Color3.new(1, 0, 0)
+local LineWidth = 2
+local DrawTeammates = true
+local FindHumanoids = true
+local GetLineOrigin = function(Camera)
+	return Vector2.new(Camera.ViewportSize.X/2, Camera.ViewportSize.Y*.9)
+end
+
+
+
+
+local Camera = workspace.CurrentCamera
+local LineOrigin = nil
+Camera:GetPropertyChangedSignal("ViewportSize"):Connect(function()
+	LineOrigin = GetLineOrigin(Camera)
+end)
+LineOrigin = GetLineOrigin(Camera)
+
+
+local Gui = Instance.new("ScreenGui")
+Gui.Name = "SnaplineGui"
+Gui.Parent = game.Players.LocalPlayer.PlayerGui
+local Lines = {}
+
+
+function Setline(Line, Width, Color, Origin, Destination)
+	local Position = (Origin + Destination) / 2
+	Line.Position = UDim2.new(0, Position.X, 0, Position.Y)
+	local Length = (Origin - Destination).Magnitude
+	Line.BackgroundColor3 = Color
+	Line.BorderColor3 = Color
+	Line.Size = UDim2.new(0, Length, 0, Width)
+	Line.Rotation = math.deg(math.atan2(Destination.Y - Origin.Y, Destination.X - Origin.X))
+end
+
+
+game:GetService("RunService").RenderStepped:Connect(function()
+	local Targets = {}
+	for i, Player in pairs(game.Players:GetPlayers()) do
+		if Player == game.Players.LocalPlayer then continue end
+		local IsTeammate = game.Players.LocalPlayer.Team ~= nil and Player.Team == game.Players.LocalPlayer.Team
+		if not DrawTeammates and IsTeammate then continue end
+		local Character = Player.Character
+		if not Character then continue end
+		local TargetPart = Character:FindFirstChild(TargetPartName)
+		if not TargetPart then continue end
+		local ScreenPoint, OnScreen = Camera:WorldToScreenPoint(TargetPart.Position)
+		if OnScreen then
+			table.insert(Targets, {Vector2.new(ScreenPoint.X, ScreenPoint.Y), IsTeammate and TeammateLineColor or LineColor})
+		end
+	end
+	if FindHumanoids then
+		for _, Obj in pairs(workspace:GetDescendants()) do
+			if Obj.ClassName ~= "Humanoid" then continue end
+			if game.Players:FindFirstChild(Obj.Parent.Name) then continue end
+			local TargetPart = Obj.Parent:FindFirstChild(TargetPartName)
+			if not TargetPart then continue end
+			local ScreenPoint, OnScreen = Camera:WorldToScreenPoint(TargetPart.Position)
+			if OnScreen then
+				table.insert(Targets, {Vector2.new(ScreenPoint.X, ScreenPoint.Y), GenericHumanoidLineColor})
+			end
+		end
+	end
+	if #Targets > #Lines then
+		local NewLine = Instance.new("Frame")
+		NewLine.Name = "Snapline"
+		NewLine.AnchorPoint = Vector2.new(.5, .5)
+		NewLine.Parent = Gui
+		table.insert(Lines, NewLine)
+	end
+	for i, Line in pairs(Lines) do
+		local TargetData = Targets[i]
+		if not TargetData then
+			Line:Destroy()
+			table.remove(Lines, i)
+			continue
+		end
+		Setline(Line, LineWidth, TargetData[2], LineOrigin, TargetData[1])
+	end
+end)
+   end,
+})
+
+local Button = BlatantTab:CreateButton({
+   Name = "Spider",
+   Callback = function()
+   BindToStepped("Spider",1,function()local aB=RaycastParams.new()aB.FilterDescendantsInstances={h.Character}local aC=workspace:Raycast(h.Character.Humanoid.LeftLeg.Position,h.Character.HumanoidRootPart.CFrame.LookVector*1.3,aB)az=aC and aC.Instance or nil;if az then h.Character.HumanoidRootPart.Velocity=Vector3.new(h.Character.HumanoidRootPart.Velocity.X or 0,aA["Value"],h.Character.HumanoidRootPart.Velocity.Z or 0)if h.Character.Humanoid:GetState()~=Enum.HumanoidStateType.Climbing then h.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Freefall)end end end)else UnbindFromStepped("Spider")end end)
+ end,
+})
+
+local Button = BlatantTab:CreateButton({
+   Name = Anti Void ",
+   Callback = function()
+   function()local aE=workspace.MapCFrames:FindFirstChild("center")and workspace.MapCFrames.center.Value.p==Vector3.new(77,11,35)AntiVoidP=Instance.new("Part")AntiVoidP.Parent=Workspace;AntiVoidP.Name="AntiVoid"AntiVoidP.CanCollide=true;AntiVoidP.Size=Vector3.new(2048,1,2048)AntiVoidP.Anchored=true;AntiVoidP.Transparency=0.55;AntiVoidP.Material=Enum.Material.Neon;AntiVoidP.Color=Color3.fromRGB(149,0,255)AntiVoidP.Position=Vector3.new(0,20.5,0)end)W:NewColorPicker("Anti-Void Colour","?",Color3.fromRGB(254,0,4),function(aF)AntiVoidP.Color=aF end end)
+   end,
+})
+Rayfield:LoadConfiguration()
+    
+if game.PlaceId == 286090429 then
+    getgenv().SecureMode = true
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Ignited | Arsenal",
+   LoadingTitle = "Loading",
+   LoadingSubtitle = "by Zero",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = false, 
+      FileName = "Ignited"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "discord.gg/jQe5DJWT",
+      RememberJoins = true
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "checkpoint",
+      Subtitle = "Key System",
+      Note = "In our discord: discord.gg/jQe5DJWT",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"3ACF1D1B5E817245DEB1964FB82C7"}
+   }
+})
+
+Rayfield:Notify({
+   Title = "Finished Loading!",
+   Content = "Press Q to open gui if its not alr open!",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Ok!",
+         Callback = function()
+         print("The user tapped Thanks!")
+      end
+   },
+},
+})
+
+local Tab = Window:CreateTab("Blatant", 4483362458)
+local Section = Tab:CreateSection("the homeless shall be taken care of.")
+
+local Slider = BlatantTab:CreateSlider({
+   Name = "Speed",
+   Range = {16, 23},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 16,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   if value then
+                lplr.Character.Humanoid.WalkSpeed = 23
+            else
+                lplr.Character.Humanoid.WalkSpeed = 16
+            end
+        end
+   end,
+})
+
+local Tab = Window:CreateTab("Visuals", 4483362458)
+local Section = Tab:CreateSection("made with love by zero <3")
+
+local Button = VisualsTab:CreateToggle({
+   Name = "Box Esp",
+   CurrentValue = false,
+   Flag = "Toggle12"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+         local camera = workspace.CurrentCamera
+            local HeadOff = Vector3.new(0, 0.5, 0)
+            local LegOff = Vector3.new(0, 3, 0)
+
+            for _, player in pairs(game.Players:GetChildren()) do
+                local BoxOutline = Drawing.new("Square")
+                BoxOutline.Visible = false
+                BoxOutline.Color = Color3.new(228/255, 173/255, 200/255)
+                BoxOutline.Thickness = 3
+                BoxOutline.Transparency = 1
+                BoxOutline.Filled = false
+
+                local Box = Drawing.new("Square")
+                Box.Visible = false
+                Box.Color = Color3.new(1, 1, 1)
+                Box.Thickness = 1
+                Box.Transparency = 1
+                Box.Filled = false
+
+                local function box()
+                    game:GetService("RunService").RenderStepped:Connect(function()
+                        if player.Character and player.Character:FindFirstChild("Humanoid") and player.Character:FindFirstChild("HumanoidRootPart") and player ~= lplr and player.Character.Humanoid.Health > 0 then
+                            local RootPart = player.Character.HumanoidRootPart
+                            local Head = player.Character.Head
+                            local RootPosition, onScreen = camera:WorldToViewportPoint(RootPart.Position)
+                            local HeadPosition = camera:WorldToViewportPoint(Head.Position + HeadOff)
+                            local LegPosition = camera:WorldToViewportPoint(RootPart.Position - LegOff)
+
+                            if onScreen then
+                                BoxOutline.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+                                BoxOutline.Position = Vector2.new(RootPosition.X - BoxOutline.Size.X / 2, RootPosition.Y - BoxOutline.Size.Y / 2)
+                                BoxOutline.Visible = true
+
+                                Box.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+                                Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
+                                Box.Visible = true
+                            else
+                                BoxOutline.Visible = false
+                                Box.Visible = false
+                            end
+                        end
+                    end)
+                end
+
+                box()
+            end
+          end
+       end
+   end,
+})
+
+local Button = VisualsTab:CreateButton({
+   Name = "WaterMark",
+   CurrentValue = false,
+   Flag = "Toggle11"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+        if game.CoreGui:FindFirstChild("UI") then
+                game.CoreGui:FindFirstChild("UI"):Destroy()
+            end
+            local screengui = Instance.new("ScreenGui", game.CoreGui)
+            screengui.Name = "UI"
+
+            local frame = Instance.new("Frame", screengui)
+            frame.Name = "Ignited"
+            frame.Size = UDim2.new(0, 100, 0, 50)
+            frame.Position = UDim2.new(0, 0, 0, 0)
+            frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = VisualsTab:CreateToggle({
+   Name = "FPS Boost",
+   CurrentValue = false,
+   Flag ="Toggle10"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+        if nil then repeat until nil script:Destroy() end
+
+            while true do
+                wait()
+                if not script:IsDescendantOf(game.Players.LocalPlayer.Backpack) then
+                    break
+                end
+            end
+            local on = false
+            local done = true 
+
+            script.Parent.MouseButton1Click:connect(function()
+                on = not on
+                if not done then return end 
+                done = false 
+                if on then 
+                    for _, Parts in pairs(workspace:GetDescendants()) do 
+                        if Parts:IsA("Part") then 
+                            if not Parts:FindFirstChild("SurfaceType") then 
+                                local SurfaceType = Instance.new("StringValue", Parts)
+                                SurfaceType.Name = "SurfaceType"
+                                SurfaceType.Value = tostring(Parts.Material) 
+                            end
+                            Parts.Material  = Enum.Material.SmoothPlastic
+                        end
+                    end
+                else 
+                    for _, Parts in pairs(workspace:GetDescendants()) do 
+                        if Parts:IsA("Part") and Parts:FindFirstChild("SurfaceType") then 
+                            Parts.Material  = Enum.Material[Parts.SurfaceType.Value] 
+                        end
+                    end 
+                end
+                done = true 
+            end)
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = VisualsTab:CreateToggle({
+   Name = "Chams",
+   CurrentValue = false,
+   Flag = "Toggle9"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+        print("soon")
+        end
+    end
+end)
+  end,
+})
+
+local Toggle = BlatantTab:CreateToggle({
+   Name = "Silent Aim",
+   CurrentValue = false,
+   Flag = "Toggle8"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+        local plrs = game:GetService("Players")
+local plr = plrs.LocalPlayer
+local mouse = plr:GetMouse()
+local camera = game:GetService("Workspace").CurrentCamera
+ 
+function notBehindWall(target)
+    local ray = Ray.new(plr.Character.Head.Position, (target.Position - plr.Character.Head.Position).Unit * 300)
+    local part, position = game:GetService("Workspace"):FindPartOnRayWithIgnoreList(ray, {plr.Character}, false, true)
+    if part then
+        local humanoid = part.Parent:FindFirstChildOfClass("Humanoid")
+        if not humanoid then
+            humanoid = part.Parent.Parent:FindFirstChildOfClass("Humanoid")
+        end
+        if humanoid and target and humanoid.Parent == target.Parent then
+            local pos, visible = camera:WorldToScreenPoint(target.Position)
+            if visible then
+                return true
+            end
+        end
+    end
+end
+ 
+function getPlayerClosestToMouse()
+    local target = nil
+    local maxDist = 100
+    for _,v in pairs(plrs:GetPlayers()) do
+        if v.Character then
+            if v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") and v.TeamColor ~= plr.TeamColor then
+                local pos, vis = camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                local dist = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(pos.X, pos.Y)).magnitude
+                if dist < maxDist and vis then
+                    local torsoPos = camera:WorldToViewportPoint(v.Character.HumanoidRootPart.Position)
+                    local torsoDist = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(torsoPos.X, torsoPos.Y)).magnitude
+                    local headPos = camera:WorldToViewportPoint(v.Character.Head.Position)
+                    local headDist = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(headPos.X, headPos.Y)).magnitude
+                    if torsoDist > headDist then
+                        if notBehindWall(v.Character.Head) then
+                            target = v.Character.Head
+                        end
+                    else
+                        if notBehindWall(v.Character.HumanoidRootPart) then
+                            target = v.Character.HumanoidRootPart
+                        end
+                    end
+                    maxDist = dist
+                end
+            end
+        end
+    end
+    return target
+end
+ 
+local gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+local oldNamecall = gmt.__namecall
+ 
+gmt.__namecall = newcclosure(function(self, ...)
+    local Args = {...}
+    local method = getnamecallmethod()
+    if tostring(self) == "HitPart" and tostring(method) == "FireServer" then
+        Args[1] = getPlayerClosestToMouse()
+        Args[2] = getPlayerClosestToMouse().Position
+        return self.FireServer(self, unpack(Args))
+    end
+    return oldNamecall(self, ...)
+end)
+       end
+    end
+end)
+   end,
+})
+
+local Toggle = BlatantTab:CreateToggle({
+   Name = "Chat Spammer",
+   CurrentValue = false,
+   Flag = "Toggle7"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+        while task.wait() do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Ignited gaming.lol",
+"All") end
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = VisualsTab:CreateToggle({
+   Name = "Full Bright"
+   CurrentValue = false,
+   Flag = "Toggle6"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+        while true do
+   local Light = game:GetService("Lighting")
+
+function dofullbright()
+Light.Ambient = Color3.new(1, 1, 1)
+Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+Light.ColorShift_Top = Color3.new(1, 1, 1)
+end
+
+dofullbright()
+
+Light.LightingChanged:Connect(dofullbright)
+        end
+    end
+end)
+   end,
+}
+
+local Toggle = PlayerTab:CreateToggle({
+   Name = "Force Reset",
+   CurrentValue = false,
+   Flag = "Toggle5"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+        local player = game.Players.LocalPlayer
+    if player.Character is not a valid "Part" and player.Character:FindFirstChild("Humanoid") then
+     Rayfield:Notify({
+   Title = "💀 Error 💀",
+   Content = "❌ LocalPlayer Not Found ❌",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+or if local player = game.Players.LocalPlayer
+if player.Charecter and 
+player.Charecter:FindFirstChild("Humanoid") then
+    local function forceResetAction()
+    local player = game.Players.LocalPlayer
+    if player.Character and player.Character:FindFirstChild("Humanoid") then
+        player.Character.Humanoid.Health = 0
+    end
+end
+ 
+
+game:GetService("UserInputService").InputBegan:Connect(function(input, isProcessed)
+    if isProcessed then
+        return
+    end
+ 
+    if input.KeyCode == Enum.KeyCode.R then
+        forceResetAction()
+    end
+end)
+      end
+   },
+},
+})
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = VisualsTab:CreateToggle({
+   Name = "Destroy Ignited",
+   CurrentValue = false,
+   Flag = "Toggle 4"
+   Callback = function()
+    spawn(function()
+    spawn(function()
+    while wait() do
+        if variable then
+        local lplr = game.GetServuce("Players").LocalPlayer
+                local names = {'ignited'}
+                if not isfolder(folder) then
+                      lplr:Kick("Error: File Not Found")
+                if is folder(folder) then
+                      delfile('ignited')
+                      Rayfield:Destroy()
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = BlatantTab:CreateToggld({ -- 2
+   Name = "Infinite Jump",
+   CurrentValue = false,
+   Flag = "Toggle2"
+   Callback = function()
+   spawn(function()
+    while wait() do
+        if variable then
+        -- Press G to toggle
+   g = false
+   
+   local p = game.Players.LocalPlayer
+   local m = p:GetMouse()
+   
+   m.KeyDown:connect(function(k)
+       if g then
+       if k:byte() == 32 then
+       local hum =
+   p.Character:FindFirstChildOfClass("Humanoid")
+       hum:ChangeState("Jumping")
+       wait(0.1)
+       hum:ChangeState("Seated")
+       end
+       end
+   end)
+   
+   local p = game.Players.LocalPlayer
+   local m = p:GetMouse()
+   
+   m.KeyDown:Connect(function(I)
+       if I == "g" then
+       g = not g 
+       end
+   end)
+        end
+    end
+end)
+  end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Distance ESP",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   spawn(function()
+    spawn(function()
+    while wait() do
+        if variable then
+        local c = workspace.CurrentCamera
+local ps = game:GetService("Players")
+local lp = ps.LocalPlayer
+local rs = game:GetService("RunService")
+
+local function esp(p,cr)
+    local h = cr:WaitForChild("Humanoid")
+    local hrp = cr:WaitForChild("HumanoidRootPart")
+
+    local text = Drawing.new("Text")
+    text.Visible = false
+    text.Center = true
+    text.Outline = true 
+    text.Font = 2
+    text.Color = Color3.fromRGB(255,255,255)
+    text.Size = 13
+
+    local c1
+    local c2
+    local c3
+
+    local function dc()
+        text.Visible = false
+        text:Remove()
+        if c1 then
+            c1:Disconnect()
+            c1 = nil 
+        end
+        if c2 then
+            c2:Disconnect()
+            c2 = nil 
+        end
+        if c3 then
+            c3:Disconnect()
+            c3 = nil 
+        end
+    end
+
+    c2 = cr.AncestryChanged:Connect(function(_,parent)
+        if not parent then
+            dc()
+        end
+    end)
+
+    c3 = h.HealthChanged:Connect(function(v)
+        if (v<=0) or (h:GetState() == Enum.HumanoidStateType.Dead) then
+            dc()
+        end
+    end)
+
+    c1 = rs.RenderStepped:Connect(function()
+        local hrp_pos,hrp_onscreen = c:WorldToViewportPoint(hrp.Position)
+        if hrp_onscreen then
+            text.Position = Vector2.new(hrp_pos.X, hrp_pos.Y)
+            text.Text = p.Name
+            text.Visible = true
+        else
+            text.Visible = false
+        end
+    end)
+end
+
+local function p_added(p)
+    if p.Character then
+        esp(p,p.Character)
+    end
+    p.CharacterAdded:Connect(function(cr)
+        esp(p,cr)
+    end)
+end
+
+for i,p in next, ps:GetPlayers() do 
+    if p ~= lp then
+        p_added(p)
+    end
+end
+
+ps.PlayerAdded:Connect(p_added)
+        end
+    end
+end)
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Skeleton",
+   CurrentValue = false,
+   Flag = "Toggle10000000000", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   spawn(function()
+	while wait() do
+		if variable then
+        --[[ have fun lol
+local camera = workspace.CurrentCamera
+local entities = game:GetService("Players")
+local localplayer = entities.LocalPlayer 
+local runservice = game:GetService("RunService")
+
+local esp_settings = {
+    enabled = true,
+    skel = true,
+    skel_col = Color3.fromRGB(255,255,255)
+}
+
+local function draw(player, character)
+
+    local skel_head = Drawing.new("Line")
+    skel_head.Visible = false
+    skel_head.Thickness = 1.5
+    skel_head.Color = Color3.fromRGB(255,255,255)
+
+    local skel_torso = Drawing.new("Line")
+    skel_torso.Visible = false
+    skel_torso.Thickness = 1.5
+    skel_torso.Color = Color3.fromRGB(255,255,255)
+
+    local skel_leftarm = Drawing.new("Line")
+    skel_leftarm.Visible = false
+    skel_leftarm.Thickness = 1.5
+    skel_leftarm.Color = Color3.fromRGB(255,255,255)
+
+    local skel_rightarm = Drawing.new("Line")
+    skel_rightarm.Visible = false
+    skel_rightarm.Thickness = 1.5
+    skel_rightarm.Color = Color3.fromRGB(255,255,255)
+
+    local skel_leftleg = Drawing.new("Line")
+    skel_leftleg.Visible = false
+    skel_leftleg.Thickness = 1.5
+    skel_leftleg.Color = Color3.fromRGB(255,255,255)
+
+    local skel_rightleg = Drawing.new("Line")
+    skel_rightleg.Visible = false
+    skel_rightleg.Thickness = 1.5
+    skel_rightleg.Color = Color3.fromRGB(255,255,255)
+
+    local function update()
+        local connection
+        connection = runservice.RenderStepped:Connect(function()
+
+            if workspace:FindFirstChild(character.Name) and
+            character and 
+            character:FindFirstChild("HumanoidRootPart") and 
+            character:FindFirstChild("Humanoid") and 
+            character:FindFirstChild("Humanoid").Health ~= 0 then 
+
+                local character_rootpart_3d = character.HumanoidRootPart.Position
+                local character_rootpart_2d, rootpart_onscreen = camera:WorldToViewportPoint(character_rootpart_3d)
+
+                if rootpart_onscreen and character.Humanoid.RigType == Enum.HumanoidRigType.R6 and esp_settings.enabled then
+
+                    local head_2d = camera:WorldToViewportPoint(character.Head.Position)
+                    local torso_upper_2d = camera:WorldToViewportPoint(character.Torso.Position + Vector3.new(0,1,0))
+                    local torso_lower_2d = camera:WorldToViewportPoint(character.Torso.Position + Vector3.new(0,-1,0))
+                    
+                    local leftarm_2d = camera:WorldToViewportPoint(character["Left Arm"].Position + Vector3.new(0,-1,0))
+                    local rightarm_2d = camera:WorldToViewportPoint(character["Right Arm"].Position + Vector3.new(0,-1,0))
+                    local leftleg_2d = camera:WorldToViewportPoint(character["Left Leg"].Position + Vector3.new(0,-1,0))
+                    local rightleg_2d = camera:WorldToViewportPoint(character["Right Leg"].Position + Vector3.new(0,-1,0))
+
+                    skel_head.From = Vector2.new(head_2d.X, head_2d.Y)
+                    skel_head.To = Vector2.new(torso_upper_2d.X, torso_upper_2d.Y)
+
+                    skel_torso.From = Vector2.new(torso_upper_2d.X, torso_upper_2d.Y)
+                    skel_torso.To = Vector2.new(torso_lower_2d.X, torso_lower_2d.Y)
+                    
+                    skel_leftarm.From = Vector2.new(torso_upper_2d.X, torso_upper_2d.Y)
+                    skel_leftarm.To = Vector2.new(leftarm_2d.X, leftarm_2d.Y)
+
+                    skel_rightarm.From = Vector2.new(torso_upper_2d.X, torso_upper_2d.Y)
+                    skel_rightarm.To = Vector2.new(rightarm_2d.X, rightarm_2d.Y)
+
+                    skel_leftleg.From = Vector2.new(torso_lower_2d.X, torso_lower_2d.Y)
+                    skel_leftleg.To = Vector2.new(leftleg_2d.X, leftleg_2d.Y)
+
+                    skel_rightleg.From = Vector2.new(torso_lower_2d.X, torso_lower_2d.Y)
+                    skel_rightleg.To = Vector2.new(rightleg_2d.X, rightleg_2d.Y)
+
+                    skel_head.Visible = esp_settings.skel
+                    skel_torso.Visible = esp_settings.skel
+                    skel_leftarm.Visible = esp_settings.skel
+                    skel_rightarm.Visible = esp_settings.skel
+                    skel_leftleg.Visible = esp_settings.skel
+                    skel_rightleg.Visible = esp_settings.skel
+
+                else
+
+                    skel_head.Visible = false
+                    skel_torso.Visible = false
+                    skel_leftarm.Visible = false
+                    skel_rightarm.Visible = false
+                    skel_leftleg.Visible = false
+                    skel_rightleg.Visible = false
+
+                end
+
+            else
+
+                if player == nil then
+                    connection:Disconnect()
+                    connection = nil 
+                end
+
+                skel_head.Visible = false
+                skel_torso.Visible = false
+                skel_leftarm.Visible = false
+                skel_rightarm.Visible = false
+                skel_leftleg.Visible = false
+                skel_rightleg.Visible = false
+
+            end
+        end)
+    end
+    coroutine.wrap(update)()
+
+end
+
+local function playeradded(player)
+    if player.Character then
+        coroutine.wrap(draw)(player, player.Character)
+    end
+    player.CharacterAdded:Connect(function(character)
+        coroutine.wrap(draw)(player, character)
+    end)
+end
+
+for a,b in next, entities:GetPlayers() do
+    if b ~= localplayer then
+        playeradded(b)
+    end
+end
+
+entities.PlayerAdded:Connect(playeradded)
+		end
+	end
+end)
+   end,
+})
+
+Rayfield:LoadConfiguration()
