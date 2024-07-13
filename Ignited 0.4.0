@@ -1,7 +1,3 @@
-local lplr = game:GetService("Players").LocalPlayer
-local names = {'Ignited'}
-if isfolder("Ignited") == false then
-           writefile("Ignited" , Game:HttpGet('https://raw.githubusercontent.com/packersonmakepackerson/Ignited-open-src/main/Ignited%200.4.0')
 if identifyexecutor and ({identifyexecutor()})[1] == 'Wave' then
     lplr:Kick("hm, wave user moment.")
 else
