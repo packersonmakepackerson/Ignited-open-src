@@ -1,3 +1,7 @@
+local lplr = game:GetService("Players").LocalPlayer
+local names = {'Ignited'}
+if isfolder("Ignited") == false then
+           writefile("Ignited" , Game:HttpGet('
 if identifyexecutor and ({identifyexecutor()})[1] == 'Wave' then
     lplr:Kick("hm, wave user moment.")
 else
@@ -108,7 +112,7 @@ if key:lower() == "f" then
 if flying then flying = false 
 if flying = true then
     Rayfield:Notify({
-   Title = Module Toggled,
+   Title = "Module Toggled",
    Content = "Flight Has Been Enabled",
    Duration = 6.5,
    Image = 4483362458,
@@ -322,32 +326,7 @@ local Button = VisualsTab:CreateButton({
 local Button = BlatantTab:CreateButton({
    Name = "Bed Nuker",
    Callback = function()
-   local Players = game:GetService("Players")
-            local ReplicatedStorage = game:GetService("ReplicatedStorage")
-            local UserInputService = game:GetService("UserInputService")
-
-            Keybind = Enum.KeyCode.B,
-}
-
-            local localPlayer = Players.LocalPlayer
-            local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
-            local sword = character:FindFirstChild("Sword")
-
-            local function onSwordHit(otherPart)
-                local otherPlayer = otherPart.Parent
-                if otherPlayer and otherPlayer:IsA("Model") then
-                    local bed = otherPlayer:FindFirstChild("Bed")
-                    if bed then
-                        bed:Destroy()
-                    end
-                end
-            end
-
-            sword.Touched:Connect(onSwordHit)
-                 if bed:IsA("Part") and
-                     local teams:FindFirstChild("Teams")
-                           repeat until bed = false and if bed = false then
-                                 while task.wait() do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("<team> ur bed has been sent to the abyss | Ignited.lol",) end
+  function(t)local ag=RaycastParams.new()ag.IgnoreWater=true;function NukerFunction(ah)local ai=game:GetService("Workspace"):Raycast(ah.Position+Vector3.new(0,24,0),Vector3.new(0,-27,0),ag)if ai then local aj=ai.Instance;for p,q in pairs(aj:GetChildren())do if q:IsA("Texture")then q:Destroy()end end;aj.Color=Color3.fromRGB(102,0,255)aj.Material=Enum.Material.Neon;game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.DamageBlock:InvokeServer({["blockRef"]={["blockPosition"]=Vector3.new(math.round(aj.Position.X/3),math.round(aj.Position.Y/3),math.round(aj.Position.Z/3))},["hitPosition"]=Vector3.new(math.round(aj.Position.X/3),math.round(aj.Position.Y/3),math.round(aj.Position.Z/3)),["hitNormal"]=Vector3.new(math.round(aj.Position.X/3),math.round(aj.Position.Y/3),math.round(aj.Position.Z/3))})end end;local aa={["Value"]=30}local ak=t;if ak then spawn(function()while task.wait(0.1)do if not ak then return end;spawn(function()if h:GetAttribute("DenyBlockBreak")==true then h:SetAttribute("DenyBlockBreak",nil)end end)if isAlive(h)then local u=getbeds()for p,q in pairs(u)do local D=(q.Position-h.Character.PrimaryPart.Position).Magnitude;if D<aa["Value"]then NukerFunction(q)end end end end end)end end)
   end,
 })
 
@@ -434,26 +413,7 @@ end,
 local Button = BlatantTab:CreateButton({
    Name = "Killaura",
    Callback = function()
-   function killaura()
-   while true do
-   local lplr = game.GetService("Players").LocalPlayer
-   local Radius = 18
-   
-   game:GetService("RunService").Stepped:Connect(function()
-   for _,q in pairs(game.GetService("Players"):GetPlayers()) do
-   if _,q ~= lplr then
-          local Magnitude = (lplr.Character.HumanoidRootPar.Position - q.Charecter.HumanoidRootPart.Position).Magnitude
-          if Radius >= Magnitude then
-              game.GetService(Players:GetPlayers()) and if Player:IsA("HumanoidRootPart") then
-                   local sword = character:FindFirstChild("Sword") and
-                   Attack:FireServer
-                 game:GetService("UserInputService").InputBegan:Connect(function(input, isProcessed)
-    if isProcessed then
-        return
-    end
- 
-    if input.KeyCode == Enum.KeyCode.K then
-        killaura()
+  function(t)local Y=require(game:GetService("ReplicatedStorage").TS.games.bedwars["bedwars-swords"]).BedwarsSwords;function hashFunc(Z)return{value=Z}end;local function _(s)if not s then return{items={},armor={}}end;local a0,a1=pcall(function()return require(game:GetService("ReplicatedStorage").TS.inventory["inventory-util"]).InventoryUtil.getInventory(s)end)if not a0 then return{items={},armor={}}end;if s.Character and s.Character:FindFirstChild("InventoryFolder")then local a2=s.Character:FindFirstChild("InventoryFolder").Value;if not a2 then return a1 end;for p,q in next,a1 do for a3,a4 in next,q do if typeof(a4)=='table'and a4.itemType then a4.instance=a2:FindFirstChild(a4.itemType)end end;if typeof(q)=='table'and q.itemType then q.instance=a2:FindFirstChild(q.itemType)end end end;return a1 end;local function a5()local a6,a7=-9e9,nil;for p,q in next,_(h).items do local a8=table.find(Y,q.itemType)if not a8 then end;if a8>a6 then a7=q;a6=a8 end end;return a7 end;local a9=m:Get(r["SwordRemote"])local aa={["Value"]=21}local ab=t;if ab then spawn(function()repeat task.wait(0.12)local ac=getnearestplayer(aa["Value"])if ac~=nil and ac.Team~=h.Team and isAlive(ac)and ac.Character:FindFirstChild("Humanoid").Health>0.1 and isAlive(h)and h.Character:FindFirstChild("Humanoid").Health>0.1 and not ac.Character:FindFirstChild("ForceField")then local ad=a5()spawn(function()local ae=Instance.new("Animation")ae.AnimationId="rbxassetid://4947108314"local af=h.Character:FindFirstChild("Humanoid"):FindFirstChild("Animator")af:LoadAnimation(ae):Play()ae:Destroy()r["ViewmodelController"]:playAnimation(15)end)if ad~=nil then r["SwordController"].lastAttack=game:GetService("Workspace"):GetServerTimeNow()-0.11;a9:SendToServer({["weapon"]=ad.tool,["entityInstance"]=ac.Character,["validate"]={["raycast"]={["cameraPosition"]=hashFunc(j.CFrame.Position),["cursorDirection"]=hashFunc(Ray.new(j.CFrame.Position,ac.Character:FindFirstChild("HumanoidRootPart").Position).Unit.Direction)},["targetPosition"]=hashFunc(ac.Character:FindFirstChild("HumanoidRootPart").Position),["selfPosition"]=hashFunc(h.Character:FindFirstChild("HumanoidRootPart").Position+((h.Character:FindFirstChild("HumanoidRootPart").Position-ac.Character:FindFirstChild("HumanoidRootPart").Position).magnitude>14 and CFrame.lookAt(h.Character:FindFirstChild("HumanoidRootPart").Position,ac.Character:FindFirstChild("HumanoidRootPart").Position).LookVector*4 or Vector3.new(0,0,0)))},["chargedAttack"]={["chargeRatio"]=0.8}})end end until not ab end)end end)
    end,
 })
 
@@ -792,6 +752,110 @@ end)
    end,
 })
 
+local Button = VisualsTab:CreateButton({
+   Name = "Tracers",
+   Callback = function()
+   local lplr = game.Players.LocalPlayer
+   local TargetPartName = "HumanoidRootPart"
+local GenericHumanoidTargetPartName = TargetPartName	
+local LineColor = Color3.new(255, 255, 255)
+local TeammateLineColor = Color3.new(0, 0.25, 1)
+local GenericHumanoidLineColor = Color3.new(1, 0, 0)
+local LineWidth = 2
+local DrawTeammates = true
+local FindHumanoids = true
+local GetLineOrigin = function(Camera)
+	return Vector2.new(Camera.ViewportSize.X/2, Camera.ViewportSize.Y*.9)
+end
+
+
+
+
+local Camera = workspace.CurrentCamera
+local LineOrigin = nil
+Camera:GetPropertyChangedSignal("ViewportSize"):Connect(function()
+	LineOrigin = GetLineOrigin(Camera)
+end)
+LineOrigin = GetLineOrigin(Camera)
+
+
+local Gui = Instance.new("ScreenGui")
+Gui.Name = "SnaplineGui"
+Gui.Parent = game.Players.LocalPlayer.PlayerGui
+local Lines = {}
+
+
+function Setline(Line, Width, Color, Origin, Destination)
+	local Position = (Origin + Destination) / 2
+	Line.Position = UDim2.new(0, Position.X, 0, Position.Y)
+	local Length = (Origin - Destination).Magnitude
+	Line.BackgroundColor3 = Color
+	Line.BorderColor3 = Color
+	Line.Size = UDim2.new(0, Length, 0, Width)
+	Line.Rotation = math.deg(math.atan2(Destination.Y - Origin.Y, Destination.X - Origin.X))
+end
+
+
+game:GetService("RunService").RenderStepped:Connect(function()
+	local Targets = {}
+	for i, Player in pairs(game.Players:GetPlayers()) do
+		if Player == game.Players.LocalPlayer then continue end
+		local IsTeammate = game.Players.LocalPlayer.Team ~= nil and Player.Team == game.Players.LocalPlayer.Team
+		if not DrawTeammates and IsTeammate then continue end
+		local Character = Player.Character
+		if not Character then continue end
+		local TargetPart = Character:FindFirstChild(TargetPartName)
+		if not TargetPart then continue end
+		local ScreenPoint, OnScreen = Camera:WorldToScreenPoint(TargetPart.Position)
+		if OnScreen then
+			table.insert(Targets, {Vector2.new(ScreenPoint.X, ScreenPoint.Y), IsTeammate and TeammateLineColor or LineColor})
+		end
+	end
+	if FindHumanoids then
+		for _, Obj in pairs(workspace:GetDescendants()) do
+			if Obj.ClassName ~= "Humanoid" then continue end
+			if game.Players:FindFirstChild(Obj.Parent.Name) then continue end
+			local TargetPart = Obj.Parent:FindFirstChild(TargetPartName)
+			if not TargetPart then continue end
+			local ScreenPoint, OnScreen = Camera:WorldToScreenPoint(TargetPart.Position)
+			if OnScreen then
+				table.insert(Targets, {Vector2.new(ScreenPoint.X, ScreenPoint.Y), GenericHumanoidLineColor})
+			end
+		end
+	end
+	if #Targets > #Lines then
+		local NewLine = Instance.new("Frame")
+		NewLine.Name = "Snapline"
+		NewLine.AnchorPoint = Vector2.new(.5, .5)
+		NewLine.Parent = Gui
+		table.insert(Lines, NewLine)
+	end
+	for i, Line in pairs(Lines) do
+		local TargetData = Targets[i]
+		if not TargetData then
+			Line:Destroy()
+			table.remove(Lines, i)
+			continue
+		end
+		Setline(Line, LineWidth, TargetData[2], LineOrigin, TargetData[1])
+	end
+end)
+   end,
+})
+
+local Button = BlatantTab:CreateButton({
+   Name = "Spider",
+   Callback = function()
+   function()local aB=RaycastParams.new()aB.FilterDescendantsInstances={h.Character}local aC=workspace:Raycast(h.Character.Humanoid.LeftLeg.Position,h.Character.HumanoidRootPart.CFrame.LookVector*1.3,aB)az=aC and aC.Instance or nil;if az then h.Character.HumanoidRootPart.Velocity=Vector3.new(h.Character.HumanoidRootPart.Velocity.X or 0,aA["Value"],h.Character.HumanoidRootPart.Velocity.Z or 0)if h.Character.Humanoid:GetState()~=Enum.HumanoidStateType.Climbing then h.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Freefall)end end end)else UnbindFromStepped("Spider")end end)
+ end,
+})
+
+local Button = BlatantTab:CreateButton({
+   Name = Anti Void ",
+   Callback = function()
+   function()local aE=workspace.MapCFrames:FindFirstChild("center")and workspace.MapCFrames.center.Value.p==Vector3.new(77,11,35)AntiVoidP=Instance.new("Part")AntiVoidP.Parent=Workspace;AntiVoidP.Name="AntiVoid"AntiVoidP.CanCollide=true;AntiVoidP.Size=Vector3.new(2048,1,2048)AntiVoidP.Anchored=true;AntiVoidP.Transparency=0.55;AntiVoidP.Material=Enum.Material.Neon;AntiVoidP.Color=Color3.fromRGB(149,0,255)AntiVoidP.Position=Vector3.new(0,20.5,0)end)W:NewColorPicker("Anti-Void Colour","?",Color3.fromRGB(254,0,4),function(aF)AntiVoidP.Color=aF end end)
+   end,
+})
 Rayfield:LoadConfiguration()
     
 if game.PlaceId == 286090429 then
